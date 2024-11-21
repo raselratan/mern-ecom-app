@@ -26,6 +26,7 @@ const register = async (req, res, next) => {
         email: email,
         phone: phone,
         address: address,
+        password: password,
       },
       jwt_activation_key,
       "10m"
@@ -47,20 +48,12 @@ const register = async (req, res, next) => {
       return;
     }
 
-    const newUser = {
-      name,
-      email,
-      phone,
-      password,
-      address,
-    };
-
     return successResponse(res, {
       success: true,
-      statusCode: 201,
+      statusCode: 200,
       message: `Please verify from your email at ${email}.`,
       data: {
-        newUser,
+        token,
       },
     });
   } catch (err) {

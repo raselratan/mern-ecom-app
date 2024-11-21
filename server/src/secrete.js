@@ -14,6 +14,8 @@ const smtp_username = process.env.SMTP_USERNAME || "";
 const smtp_passwrd = process.env.SMTP_PASSWRD || "";
 const client_url = process.env.CLIENT_URL || "";
 
+const upload_file_path = process.env.UPLOAD_FILE_PATH || "public/iamages";
+
 module.exports = {
   serverPort,
   mongodbUrl,
@@ -22,4 +24,5 @@ module.exports = {
   smtp_username,
   smtp_passwrd,
   client_url,
+  upload_file_path,
 };
